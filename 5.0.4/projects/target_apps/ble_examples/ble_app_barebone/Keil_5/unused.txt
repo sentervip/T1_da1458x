@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5050169: Last Updated: Thu Jul 30 17:52:43 2015
+;#<FEEDBACK># ARM Linker, 5060422: Last Updated: Mon Jan 06 17:47:21 2020
 ;VERSION 0.2
 ;FILE adc.o
 adc_calibrate <= USED 0
@@ -22,7 +22,6 @@ app_set_prf_srv_perm <= USED 0
 app_timer_set <= USED 0
 ;FILE app_default_handlers.o
 default_advertise_operation <= USED 0
-default_app_on_adv_undirect_complete <= USED 0
 default_app_on_csrk_exch <= USED 0
 default_app_on_disconnect <= USED 0
 default_app_on_encrypt_req_ind <= USED 0
@@ -47,31 +46,26 @@ app_easy_security_encrypt_cfm_get_active <= USED 0
 app_easy_security_ltk_exch <= USED 0
 app_easy_security_ltk_exch_get_active <= USED 0
 app_easy_security_pairing_rsp_get_active <= USED 0
+app_easy_security_request <= USED 0
+app_easy_security_request_get_active <= USED 0
 app_easy_security_send_pairing_rsp <= USED 0
 app_easy_security_set_encrypt_req_invalid <= USED 0
 app_easy_security_set_encrypt_req_valid <= USED 0
 app_easy_security_set_ltk_exch <= USED 0
 app_easy_security_set_ltk_exch_from_sec_env <= USED 0
-app_easy_security_set_tk <= USED 0
 app_easy_security_tk_exch <= USED 0
 app_easy_security_tk_get_active <= USED 0
 app_easy_security_validate_encrypt_req_against_env <= USED 0
 ;FILE app_easy_timer.o
 app_easy_timer_cancel_all <= USED 0
-app_easy_timer_free_callback <= USED 0
 app_easy_timer_modify <= USED 0
 ;FILE app_entry_point.o
 ;FILE app_msg_utils.o
 app_msg_send_wakeup_ble <= USED 0
 ;FILE app_security.o
+app_sec_gen_csrk <= USED 0
 app_sec_gen_ltk <= USED 0
 app_sec_gen_tk <= USED 0
-app_security_start <= USED 0
-;FILE app_security_task.o
-gapc_bond_ind_handler <= USED 0
-gapc_bond_req_ind_handler <= USED 0
-gapc_encrypt_ind_handler <= USED 0
-gapc_encrypt_req_ind_handler <= USED 0
 ;FILE app_task.o
 ;FILE arch_main.o
 ;FILE arch_patch.o
@@ -79,11 +73,14 @@ gapc_encrypt_req_ind_handler <= USED 0
 arch_ble_ext_wakeup_off <= USED 0
 arch_ble_ext_wakeup_on <= USED 0
 arch_force_active_mode <= USED 0
+arch_get_sleep_mode <= USED 0
 arch_last_rwble_evt_get <= USED 0
 arch_restore_sleep_mode <= USED 0
 ;FILE arch_system.o
 arch_adv_time_calculate <= USED 0
 arch_set_pxact_gpio <= USED 0
+arch_uart_init_slow <= USED 0
+arch_wkupct_tweak_deb_time <= USED 0
 calibrate_rcx20 <= USED 0
 lld_sleep_lpcycles_2_us_rcx_func <= USED 0
 lld_sleep_us_2_lpcycles_rcx_func <= USED 0
@@ -91,6 +88,9 @@ read_rcx_freq <= USED 0
 select_lp_clk <= USED 0
 set_xtal16m_trim_value <= USED 0
 ;FILE atts_task.obj
+;FILE atts_util.obj
+dg_register_task_for_read_request <= USED 0
+dg_unregister_task_from_read_request <= USED 0
 ;FILE battery.o
 batt_cal_aaa <= USED 0
 batt_cal_cr1225 <= USED 0
@@ -99,6 +99,7 @@ battery_get_lvl <= USED 0
 ;FILE boot_vectors.o
 ;FILE ch_map.obj
 ;FILE diss.o
+;FILE gapc_task.obj
 ;FILE gapm_util.obj
 ;FILE gpio.o
 GPIO_ConfigurePin <= USED 0
@@ -120,12 +121,15 @@ i2c_eeprom_release <= USED 0
 i2c_eeprom_write_byte <= USED 0
 i2c_eeprom_write_data <= USED 0
 i2c_eeprom_write_page <= USED 0
-i2c_send_address <= USED 0
 i2c_wait_until_eeprom_ready <= USED 0
 ;FILE jump_table.o
 dummyf <= USED 0
+;FILE ke_mem.obj
+log_ke_free <= USED 0
+log_ke_malloc <= USED 0
 ;FILE ke_task.obj
 ;FILE llc.obj
+;FILE llc_con_update_ind.obj
 ;FILE nmi_handler.o
 ;FILE nvds.o
 ;FILE prf_utils.o
@@ -138,6 +142,7 @@ rf_nfm_enable <= USED 0
 rf_nfm_is_enabled <= USED 0
 ;FILE rwble.o
 ;FILE rwip.o
+__ARM_common_ll_muluu <= USED 0
 ;FILE smpc.obj
 ;FILE smpc_task.obj
 ;FILE spi.o
@@ -177,6 +182,13 @@ spi_read_flash_unique_id <= USED 0
 syscntl_set_dcdc_vbat3v_level <= USED 0
 ;FILE system_armcm0.o
 ;FILE trng.o
+;FILE uart2.o
+uart2_finish_transfers <= USED 0
+uart2_flow_off <= USED 0
+uart2_flow_on <= USED 0
+uart2_init <= USED 0
+uart2_read <= USED 0
+uart2_write <= USED 0
 ;FILE user_barebone.o
 ;FILE user_periph_setup.o
 set_pad_functions <= USED 0

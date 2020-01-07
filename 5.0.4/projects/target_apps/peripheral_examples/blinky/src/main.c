@@ -79,7 +79,7 @@ void blinky_test(void)
         i++;
         if (LED_OFF_THRESHOLD   == i) {
             GPIO_SetActive( LED_PORT, LED_PIN);
-            printf_string("\n\r *LED ON* ");
+            printf_string("\n\r *LED ON* 2019");
         }
         if (LED_ON_THRESHOLD == i) {
             GPIO_SetInactive(LED_PORT, LED_PIN);

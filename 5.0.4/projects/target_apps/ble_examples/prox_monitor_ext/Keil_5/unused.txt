@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5050169: Last Updated: Thu Jul 30 17:58:12 2015
+;#<FEEDBACK># ARM Linker, 5060020: Last Updated: Fri Aug 16 00:54:32 2019
 ;VERSION 0.2
 ;FILE adc.o
 adc_calibrate <= USED 0
@@ -11,12 +11,15 @@ arch_ble_ext_wakeup_off <= USED 0
 arch_ble_ext_wakeup_on <= USED 0
 arch_ble_force_wakeup <= USED 0
 arch_force_active_mode <= USED 0
+arch_get_sleep_mode <= USED 0
 arch_last_rwble_evt_get <= USED 0
 arch_restore_sleep_mode <= USED 0
 ;FILE arch_system.o
 app_use_lower_clocks_check <= USED 0
 arch_adv_time_calculate <= USED 0
 arch_set_pxact_gpio <= USED 0
+arch_uart_init_slow <= USED 0
+arch_wkupct_tweak_deb_time <= USED 0
 calibrate_rcx20 <= USED 0
 lld_sleep_lpcycles_2_us_rcx_func <= USED 0
 lld_sleep_us_2_lpcycles_rcx_func <= USED 0
@@ -24,6 +27,9 @@ read_rcx_freq <= USED 0
 select_lp_clk <= USED 0
 set_xtal16m_trim_value <= USED 0
 ;FILE atts_task.obj
+;FILE atts_util.obj
+dg_register_task_for_read_request <= USED 0
+dg_unregister_task_from_read_request <= USED 0
 ;FILE battery.o
 batt_cal_aaa <= USED 0
 batt_cal_cr1225 <= USED 0
@@ -32,6 +38,7 @@ battery_get_lvl <= USED 0
 ;FILE boot_vectors.o
 ;FILE ch_map.obj
 ;FILE disc.o
+;FILE gapc_task.obj
 ;FILE gapm_util.obj
 ;FILE gpio.o
 GPIO_ConfigurePinPower <= USED 0
@@ -43,8 +50,12 @@ GPIO_SetIRQInputLevel <= USED 0
 ;FILE hardfault_handler.o
 ;FILE jump_table.o
 dummyf <= USED 0
+;FILE ke_mem.obj
+log_ke_free <= USED 0
+log_ke_malloc <= USED 0
 ;FILE ke_task.obj
 ;FILE llc.obj
+;FILE llc_con_update_ind.obj
 ;FILE nmi_handler.o
 ;FILE nvds.o
 ;FILE prf_utils.o
@@ -64,6 +75,7 @@ rf_nfm_enable <= USED 0
 rf_nfm_is_enabled <= USED 0
 ;FILE rwble.o
 ;FILE rwip.o
+__ARM_common_ll_muluu <= USED 0
 ;FILE smpc.obj
 ;FILE smpc_task.obj
 ;FILE spi.o

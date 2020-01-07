@@ -19,6 +19,7 @@
 #include "datasheet.h"
 #include "pwm.h"
 #include "user_periph_setup.h"
+#include "ARMCM0.h"
 
 timer0_handler_function_t* TIMER0_callback;
 
@@ -207,7 +208,7 @@ inline void timer0_register_callback(timer0_handler_function_t* callback)
 
 void SWTIM_Handler(void) 
 {
-    if (TIMER0_callback != NULL)
+    if (TIMER0_callback != 0)
         TIMER0_callback();
 }
 
