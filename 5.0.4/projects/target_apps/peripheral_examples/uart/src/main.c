@@ -61,6 +61,7 @@ void system_init(void)
  */
 void uart_test(void)
 {  
+	  int32_t i=0x11223344;
     printf_string("\n\r\n\r*************");
     printf_string("\n\r* UART TEST *\n\r");
     printf_string("*************\n\r");
@@ -68,6 +69,6 @@ void uart_test(void)
     printf_string("\n\rUART print_hword() = 0x");
     print_hword(0xAABB);
     printf_string("\n\rUART print_word() = 0x");
-    print_word(0x11223344);
+    print_word(i);
     printf_string("\n\rEnd of test\n\r");
 }

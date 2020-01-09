@@ -30,7 +30,7 @@
 #include "user_custs1_impl.h"
 #include "user_periph_setup.h"
 #include "wkupct_quadec.h"
-
+#include "common_uart.h"
 struct app_proj_env_tag user_app_env __attribute__((section("retention_mem_area0"),zero_init)); //@RETENTION MEMORY
 
 

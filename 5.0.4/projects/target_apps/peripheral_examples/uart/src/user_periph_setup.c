@@ -41,7 +41,7 @@ void periph_init(void)
     while (!(GetWord16(SYS_STAT_REG) & PER_IS_UP));
 
     //Init pads
-    GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, false);
+    GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, true);
     GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
 
     // Initialize UART component

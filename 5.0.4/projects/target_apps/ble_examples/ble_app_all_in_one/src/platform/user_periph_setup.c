@@ -26,6 +26,8 @@
 #include "gpio.h"
 #include "uart.h"                    // UART initialization
 #include "common_uart.h"
+//#include "arch_console.h"
+
 /**
  ****************************************************************************************
  * @brief Each application reserves its own GPIOs here.
@@ -63,8 +65,10 @@ void GPIO_reservations(void)
 void set_pad_functions(void)        // set gpio port function mode
 {
 #ifdef CFG_PRINTF_UART2
-    GPIO_ConfigurePin(GPIO_UART2_TX_PORT, GPIO_UART2_TX_PIN, OUTPUT, PID_UART2_TX, false);
-    GPIO_ConfigurePin(GPIO_UART2_RX_PORT, GPIO_UART2_RX_PIN, INPUT, PID_UART2_RX, false);
+    //GPIO_ConfigurePin(GPIO_UART2_TX_PORT, GPIO_UART2_TX_PIN, OUTPUT, PID_UART2_TX, false);
+    //GPIO_ConfigurePin(GPIO_UART2_RX_PORT, GPIO_UART2_RX_PIN, INPUT, PID_UART2_RX, false);
+	GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, true);
+  GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
 #endif
 	GPIO_ConfigurePin(GPIO_PORT_0, GPIO_PIN_0, INPUT, PID_ADC, false );
 	GPIO_ConfigurePin(GPIO_PORT_0, GPIO_PIN_2, INPUT, PID_ADC, false );
@@ -86,11 +90,9 @@ void set_pad_functions(void)        // set gpio port function mode
     GPIO_ConfigurePin(SPI_DO_GPIO_PORT,  SPI_DO_GPIO_PIN,  OUTPUT, PID_SPI_DO,  false);
     GPIO_ConfigurePin(SPI_DI_GPIO_PORT,  SPI_DI_GPIO_PIN,  INPUT,  PID_SPI_DI,  false);
 	
-	//Init uart1
-    GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, false);
-    GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
-    SetBits16(CLK_PER_REG, UART2_ENABLE, 1);      // enable  clock for UART 2
-    uart2_init(UART2_BAUDRATE, UART2_DATALENGTH);
+	  //Init uart2
+  //  GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, true);
+ //   GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
 }
 
 void periph_init(void)
@@ -110,13 +112,16 @@ void periph_init(void)
     // (Re)Initialize peripherals
     // i.e.
     // uart_init(UART_BAUDRATE_115K2, 3);  
-    
-
+    // Initialize UART component
+   // SetBits16(CLK_PER_REG, UART2_ENABLE, 1);      // enable  clock for UART 2
+	  int16 i=0xaa55;
+   // uart2_init(UART2_BAUDRATE, UART2_DATALENGTH);
+	  
 #ifdef CFG_PRINTF_UART2
     SetBits16(CLK_PER_REG, UART2_ENABLE, 1);
     uart2_init(UART_BAUDRATE_115K2, 3);
 #endif
-
+    printf_string("\nUART start:");  print_hword(i); //arch_puts("arch puts");
     // Enable the pads
     SetBits16(SYS_CTRL_REG, PAD_LATCH_EN, 1);
 }

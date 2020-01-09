@@ -70,13 +70,14 @@
 /*          It allows developer to hot attach debugger and get debug information                                */
 /****************************************************************************************************************/
 #define CFG_DEVELOPMENT_DEBUG
-
+ 
 /****************************************************************************************************************/
 /*UART Console Print. Enables serial interface logging mechanism. If CFG_PRINTF is defined CFG_PRINTF_UART2     */
 /* controls the uart module used. If it is defined UART2 is used. If not, UART is used. uart or uart2 driver    */
 /* must be included in project respectively.                                                                    */
 /****************************************************************************************************************/
-#undef CFG_PRINTF
+//#undef CFG_PRINTF
+#define CFG_PRINTF
 #ifdef CFG_PRINTF
     #define CFG_PRINTF_UART2
 #endif

@@ -42,6 +42,7 @@
 #include "app_task.h"
 #include "uart.h"
 #include "user_periph_setup.h" 
+#include "common_uart.h"
 
 #if (BLE_SPOTA_RECEIVER)
 #include "app_spotar.h"
@@ -186,14 +187,14 @@ static void app_wakeup_led_ctrl_cb(void)
 		}
 	}		
 }
+//广播中500ms,循环调用
 static void app_check_button_cb(void)
 {
 	static uint16_t powerOffCount = 0;	
-	if(GPIO_GetPinStatus( GPIO_BUTTON_PORT, GPIO_BUTTON_PIN ) == 0)
-	{
+	if(GPIO_GetPinStatus( GPIO_BUTTON_PORT, GPIO_BUTTON_PIN ) == 0){
 		powerOffCount++;
 		user_app_enable_led();
-		arch_force_active_mode();
+		//arch_force_active_mode();
 		if(powerOffCount > 5)
 		{
 			powerOffCount = 0;
@@ -201,21 +202,19 @@ static void app_check_button_cb(void)
 			//arch_restore_sleep_mode();
 			user_app_disable_periphs();
 			user_app_disable_led();
-			for(int i=0;i<10;i++)
-			arch_restore_sleep_mode();			
+			for(int i=0;i<10;i++);
+			//arch_restore_sleep_mode();			
 			if(app_check_button_used != EASY_TIMER_INVALID_TIMER)
 			{
 				//app_easy_timer_cancel(app_check_button_used);
 				app_check_button_used = EASY_TIMER_INVALID_TIMER;
-			}
-			
-		}
-	}
-	else
-	{
-		powerOffCount = 0;
+			}			
+		 }
+	}else{
+		powerOffCount>0?powerOffCount--:0;
+		//powerOffCount = 0;
 		user_app_disable_led();
-		arch_restore_sleep_mode();
+		//arch_restore_sleep_mode();
 	}
 	if(app_check_button_used != EASY_TIMER_INVALID_TIMER)
 	{
@@ -235,14 +234,17 @@ static void app_button_press_cb(void)
     {
         periph_init();
     }
-
-    if (arch_ble_ext_wakeup_get())
+    
+		bool enable = arch_ble_ext_wakeup_get();
+		printf_string("\n app_button_press_cb sleep:");
+		printf_byte(enable);
+    if (enable)
     {
         arch_set_sleep_mode(app_default_sleep_mode);
         arch_ble_force_wakeup();
         arch_ble_ext_wakeup_off();
         app_easy_wakeup();
-		wakeup_led_ctrl_used = app_easy_timer(APP_WAKEUP_LED_CTRL_TIMER_DELAY,app_wakeup_led_ctrl_cb);
+		    wakeup_led_ctrl_used = app_easy_timer(APP_WAKEUP_LED_CTRL_TIMER_DELAY,app_wakeup_led_ctrl_cb);
     }
 }
 
@@ -373,7 +375,7 @@ void on_spotar_status_change( const uint8_t spotar_event)
 void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind const *param)
 {
     default_app_on_connection(connection_idx, param);
-
+    printf_string("\n connected");
     if (app_env[connection_idx].conidx != GAP_INVALID_CONIDX)
     {
         app_connection_idx = connection_idx;
@@ -629,14 +631,15 @@ void user_catch_rest_hndl(ke_msg_id_t const msgid,
 
 /**
  ****************************************************************************************
- * @brief Sets button as wakeup trigger
+ * @brief Sets button as wakeup trigger 
  * @return void
+ *断开连接，按键低电平唤醒
  ****************************************************************************************
 */
 static void app_button_enable(void)
 {
-	 printf_string("\n\r* UART TEST *\n\r");
-    app_easy_wakeup_set(app_wakeup_cb);
+	
+    app_easy_wakeup_set(app_wakeup_cb);  //唤醒后执行的方法
     wkupct_register_callback(app_button_press_cb);
     wkupct_enable_irq(WKUPCT_PIN_SELECT(GPIO_BUTTON_PORT, GPIO_BUTTON_PIN), // select pin (GPIO_BUTTON_PORT, GPIO_BUTTON_PIN)
                       WKUPCT_PIN_POLARITY(GPIO_BUTTON_PORT, GPIO_BUTTON_PIN, WKUPCT_PIN_POLARITY_LOW), // polarity low

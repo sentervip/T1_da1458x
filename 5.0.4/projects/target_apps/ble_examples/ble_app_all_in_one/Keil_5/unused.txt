@@ -1,4 +1,4 @@
-;#<FEEDBACK># ARM Linker, 5060422: Last Updated: Tue Jan 07 22:09:47 2020
+;#<FEEDBACK># ARM Linker, 5060422: Last Updated: Thu Jan 09 17:57:18 2020
 ;VERSION 0.2
 ;FILE adc.o
 adc_disable <= USED 0
@@ -72,6 +72,9 @@ app_sec_gen_tk <= USED 0
 app_spotar_exec_patch <= USED 0
 ;FILE app_spotar_task.o
 ;FILE app_task.o
+;FILE arch_console.o
+arch_printf <= USED 0
+arch_puts <= USED 0
 ;FILE arch_main.o
 ;FILE arch_patch.o
 ;FILE arch_sleep.o
@@ -97,9 +100,7 @@ battery_get_lvl <= USED 0
 ;FILE ch_map.obj
 ;FILE common_uart.o
 itoa <= USED 0
-print_hword <= USED 0
 print_word <= USED 0
-printf_byte <= USED 0
 printf_byte_dec <= USED 0
 reverse <= USED 0
 ;FILE custom_common.o

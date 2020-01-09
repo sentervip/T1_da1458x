@@ -122,7 +122,7 @@
         #define UART2_TX_GPIO_PIN   GPIO_PIN_4
 
         #define UART2_RX_GPIO_PORT  GPIO_PORT_0
-        #define UART2_RX_GPIO_PIN   GPIO_PIN_5
+        #define UART2_RX_GPIO_PIN   GPIO_PIN_7   //GPIO_PIN_5 by azj md
 
     #endif
 #endif
@@ -173,7 +173,8 @@
     #define GPIO_PWM_PIN      GPIO_PIN_1
 
     #define GPIO_BUTTON_PORT  GPIO_PORT_1
-    #define GPIO_BUTTON_PIN   GPIO_PIN_3  // GPIO_PIN_3	  by aizj md
+    #define GPIO_BUTTON_PIN   GPIO_PIN_1  // GPIO_PIN_3	  by aizj md
+
 
 // Select UART settings
 #define UART2_BAUDRATE     UART_BAUDRATE_115K2       // Baudrate in bits/s: {9K6, 14K4, 19K2, 28K8, 38K4, 57K6, 115K2}
@@ -184,7 +185,7 @@
 
 #define UART2_GPIO_PORT    GPIO_PORT_0
 #define UART2_TX_PIN       GPIO_PIN_4
-#define UART2_RX_PIN       GPIO_PIN_5
+#define UART2_RX_PIN       GPIO_PIN_7
 #define UART_ENABLED
 #endif
 
