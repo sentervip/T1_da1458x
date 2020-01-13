@@ -84,6 +84,7 @@ struct mnf_specific_data_ad_structure mnf_data __attribute__((section("retention
 struct gap_bdaddr stored_addr                  __attribute__((section("retention_mem_area0"),zero_init)); // @RETENTION MEMORY
 
 
+
 /*
  * FUNCTION DEFINITIONS
  ****************************************************************************************
@@ -191,19 +192,27 @@ static void app_wakeup_led_ctrl_cb(void)
 static void app_check_button_cb(void)
 {
 	static uint16_t powerOffCount = 0;	
+	printf_string("app_check_button_cb");
 	if(GPIO_GetPinStatus( GPIO_BUTTON_PORT, GPIO_BUTTON_PIN ) == 0){
 		powerOffCount++;
 		user_app_enable_led();
-		//arch_force_active_mode();
+		arch_force_active_mode();
 		if(powerOffCount > 5)
 		{
 			powerOffCount = 0;
+			
+			if(app_adv_data_update_timer_used != EASY_TIMER_INVALID_TIMER)			// lewis add
+			{
+				app_easy_timer_cancel(app_adv_data_update_timer_used);					
+				app_adv_data_update_timer_used = EASY_TIMER_INVALID_TIMER;		
+			}				
+			
 			app_easy_gap_advertise_stop();
 			//arch_restore_sleep_mode();
 			user_app_disable_periphs();
 			user_app_disable_led();
-			for(int i=0;i<10;i++);
-			//arch_restore_sleep_mode();			
+			for(int i=0;i<10;i++)
+			arch_restore_sleep_mode();			
 			if(app_check_button_used != EASY_TIMER_INVALID_TIMER)
 			{
 				//app_easy_timer_cancel(app_check_button_used);
@@ -211,10 +220,10 @@ static void app_check_button_cb(void)
 			}			
 		 }
 	}else{
-		powerOffCount>0?powerOffCount--:0;
-		//powerOffCount = 0;
+		//powerOffCount>0?powerOffCount--:0;
+		powerOffCount = 0;
 		user_app_disable_led();
-		//arch_restore_sleep_mode();
+		arch_restore_sleep_mode();
 	}
 	if(app_check_button_used != EASY_TIMER_INVALID_TIMER)
 	{
@@ -380,9 +389,12 @@ void user_app_connection(uint8_t connection_idx, struct gapc_connection_req_ind 
     {
         app_connection_idx = connection_idx;
 
-        // Stop the advertising data update timer
-        app_easy_timer_cancel(app_adv_data_update_timer_used);
-		app_adv_data_update_timer_used = EASY_TIMER_INVALID_TIMER;
+				if(app_adv_data_update_timer_used != EASY_TIMER_INVALID_TIMER)		// lewis add
+				{
+					// Stop the advertising data update timer
+					app_easy_timer_cancel(app_adv_data_update_timer_used);
+					app_adv_data_update_timer_used = EASY_TIMER_INVALID_TIMER;
+				}
 
         // Check if the parameters of the established connection are the preferred ones.
         // If not then schedule a connection parameter update request.
@@ -650,6 +662,7 @@ static void app_button_enable(void)
 
 void user_app_adv_undirect_complete(const uint8_t status)
 {
+	printf_string("undirect1");
     // Disable wakeup for BLE and timer events. Only external (GPIO) wakeup events can wakeup processor.
     if (status == GAP_ERR_CANCELED)
     {
@@ -659,6 +672,8 @@ void user_app_adv_undirect_complete(const uint8_t status)
 
         // Configure wakeup button
         app_button_enable();
+		printf_string("2 btn no used");
+		
     }
 }
 

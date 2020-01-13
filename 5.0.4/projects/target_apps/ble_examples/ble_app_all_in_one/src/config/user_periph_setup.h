@@ -185,7 +185,7 @@
 
 #define UART2_GPIO_PORT    GPIO_PORT_0
 #define UART2_TX_PIN       GPIO_PIN_4
-//#define UART2_RX_PIN       GPIO_PIN_5  // muliti  spi_0_5 and uart_Rx
+//#define UART2_RX_PIN       GPIO_PIN_5  // multi  spi_0_5 and uart_Rx
 #define UART_ENABLED
 #endif
 

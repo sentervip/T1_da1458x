@@ -410,6 +410,7 @@ static void user_app_button_press_cb(void)
 {
     uint8_t next_btn_event = 0;
 
+	printf_string("enter user_app_button_press_cb");
     // Read button state
     if(GPIO_GetPinStatus( GPIO_BUTTON_PORT, GPIO_BUTTON_PIN ))
     {
