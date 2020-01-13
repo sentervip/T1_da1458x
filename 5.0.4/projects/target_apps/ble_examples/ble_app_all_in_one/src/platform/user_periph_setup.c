@@ -56,9 +56,9 @@ void GPIO_reservations(void)
     RESERVE_GPIO(A8,SPI_DO_GPIO_PORT,  SPI_DO_GPIO_PIN, PID_SPI_DO);
     RESERVE_GPIO(A9,SPI_DI_GPIO_PORT,  SPI_DI_GPIO_PIN,  PID_SPI_DI);
 	
-	//uart1
-	RESERVE_GPIO(A10,GPIO_PORT_0,  UART2_TX_PIN, PID_UART1_IRDA_TX);
-    RESERVE_GPIO(A11,GPIO_PORT_0,  UART2_RX_PIN,  PID_UART1_IRDA_RX);
+	//uart2
+		RESERVE_GPIO(A10,UART2_GPIO_PORT, UART2_TX_PIN,  PID_UART2_TX);
+   // RESERVE_GPIO(A11,UART2_GPIO_PORT, UART2_RX_PIN,  PID_UART2_RX);
 }
 #endif // CFG_DEVELOPMENT_DEBUG
 
@@ -91,8 +91,8 @@ void set_pad_functions(void)        // set gpio port function mode
     GPIO_ConfigurePin(SPI_DI_GPIO_PORT,  SPI_DI_GPIO_PIN,  INPUT,  PID_SPI_DI,  false);
 	
 	  //Init uart2
-  //  GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, true);
- //   GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
+    GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_TX_PIN, OUTPUT, PID_UART2_TX, true);
+    //GPIO_ConfigurePin(UART2_GPIO_PORT, UART2_RX_PIN, INPUT, PID_UART2_RX, false);
 }
 
 void periph_init(void)
@@ -113,9 +113,9 @@ void periph_init(void)
     // i.e.
     // uart_init(UART_BAUDRATE_115K2, 3);  
     // Initialize UART component
-   // SetBits16(CLK_PER_REG, UART2_ENABLE, 1);      // enable  clock for UART 2
+    SetBits16(CLK_PER_REG, UART2_ENABLE, 1);      // enable  clock for UART 2
 	  int16 i=0xaa55;
-   // uart2_init(UART2_BAUDRATE, UART2_DATALENGTH);
+    uart2_init(UART2_BAUDRATE, UART2_DATALENGTH);
 	  
 #ifdef CFG_PRINTF_UART2
     SetBits16(CLK_PER_REG, UART2_ENABLE, 1);

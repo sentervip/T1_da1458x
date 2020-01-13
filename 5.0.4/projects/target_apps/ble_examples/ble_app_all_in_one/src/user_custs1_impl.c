@@ -358,13 +358,13 @@ static void user_app_enable_pwm(void)
 }
 void user_app_disable_led(void)
 {
-	arch_restore_sleep_mode();
+	//arch_restore_sleep_mode();
 	GPIO_SetInactive(GPIO_LED_PORT, GPIO_LED_PIN);
 }
 void user_app_enable_led(void)
 {
 	// Disable sleep mode
-	arch_force_active_mode();
+	//arch_force_active_mode();
 	GPIO_SetActive(GPIO_LED_PORT, GPIO_LED_PIN);
 }
 uint8_t user_app_get_led_status(void)

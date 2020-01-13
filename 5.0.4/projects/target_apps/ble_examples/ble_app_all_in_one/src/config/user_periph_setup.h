@@ -172,8 +172,8 @@
     #define GPIO_PWM_PORT     GPIO_PORT_2 //GPIO_PORT_1  by aizj md
     #define GPIO_PWM_PIN      GPIO_PIN_1
 
-    #define GPIO_BUTTON_PORT  GPIO_PORT_1
-    #define GPIO_BUTTON_PIN   GPIO_PIN_1  // GPIO_PIN_3	  by aizj md
+    #define GPIO_BUTTON_PORT  GPIO_PORT_0  
+    #define GPIO_BUTTON_PIN   GPIO_PIN_7  // GPIO_PIN_3	  by aizj md
 
 
 // Select UART settings
@@ -185,7 +185,7 @@
 
 #define UART2_GPIO_PORT    GPIO_PORT_0
 #define UART2_TX_PIN       GPIO_PIN_4
-#define UART2_RX_PIN       GPIO_PIN_7
+//#define UART2_RX_PIN       GPIO_PIN_5  // muliti  spi_0_5 and uart_Rx
 #define UART_ENABLED
 #endif
 

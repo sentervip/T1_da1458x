@@ -116,7 +116,7 @@ typedef enum {
 #ifndef GPIO_DRV_PIN_ALLOC_MON_DISABLED
 
 #define NO_OF_PORTS 4   // cannot be bigger than 4
-#define NO_OF_MAX_PINS_PER_PORT 10  // cannot be bigger than 16
+#define NO_OF_MAX_PINS_PER_PORT 11  // cannot be bigger than 16
 
 extern int GPIO[NO_OF_PORTS][NO_OF_MAX_PINS_PER_PORT];
 
