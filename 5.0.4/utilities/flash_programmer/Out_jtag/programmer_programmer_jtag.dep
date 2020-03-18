@@ -1,176 +1,0 @@
-Dependencies for Project 'programmer', Target 'programmer_jtag': (DO NOT MODIFY !)
-F (.\startup\startup_CMSDK_CM0.s)(0x57988476)(--cpu Cortex-M0 --li -g --apcs=interwork --pd "__MICROLIB SETA 1"-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include--pd "__UVISION_VERSION SETA 516" --pd "ARMCM0 SETA 1"--list .\out_jtag\startup_cmsdk_cm0.lst --xref -o .\out_jtag\startup_cmsdk_cm0.o --depend .\out_jtag\startup_cmsdk_cm0.d)
-F (.\startup\system_CMSDK.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\system_cmsdk.o --omf_browse .\out_jtag\system_cmsdk.crf --depend .\out_jtag\system_cmsdk.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-F (.\src\peripherals.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\peripherals.o --omf_browse .\out_jtag\peripherals.crf --depend .\out_jtag\peripherals.d)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\include\uart.h)(0x57988476)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\include\peripherals.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-I (.\include\user_periph_setup.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-F (.\src\crc32.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\crc32.o --omf_browse .\out_jtag\crc32.crf --depend .\out_jtag\crc32.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (C:\Keil_v5\ARM\ARMCC\include\stddef.h)(0x55AEF5F2)
-F (.\src\otpc.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\otpc.o --omf_browse .\out_jtag\otpc.crf --depend .\out_jtag\otpc.d)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\include\otpc.h)(0x57988476)
-F (.\src\uart.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\uart.o --omf_browse .\out_jtag\uart.crf --depend .\out_jtag\uart.d)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\include\uart.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-I (.\include\peripherals.h)(0x57988476)
-F (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.c)(0x57988474)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\i2c_eeprom.o --omf_browse .\out_jtag\i2c_eeprom.crf --depend .\out_jtag\i2c_eeprom.d)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-I (.\include\user_periph_setup.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-F (.\..\..\sdk\platform\driver\spi_flash\spi_flash.c)(0x5D77C02D)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\spi_flash.o --omf_browse .\out_jtag\spi_flash.crf --depend .\out_jtag\spi_flash.d)
-I (..\..\sdk\platform\driver\spi_flash\spi_flash.h)(0x5D77BED4)
-I (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-F (.\..\..\sdk\platform\driver\spi\spi.c)(0x57988474)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\spi.o --omf_browse .\out_jtag\spi.crf --depend .\out_jtag\spi.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-F (.\..\..\sdk\platform\driver\gpio\gpio.c)(0x57988474)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\gpio.o --omf_browse .\out_jtag\gpio.crf --depend .\out_jtag\gpio.d)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-I (..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\include\user_periph_setup.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-F (.\src\programmer.c)(0x57988476)(-c --cpu Cortex-M0 -D__MICROLIB --li -g -O3 --apcs=interwork -I.\..\..\sdk\platform\driver\i2c_eeprom -I.\..\..\sdk\platform\driver\spi -I.\..\..\sdk\platform\arch -I.\..\..\sdk\platform\arch\compiler\rvds -I.\..\..\sdk\platform\arch\ll\rvds -I.\..\..\sdk\platform\driver\reg -I.\..\..\sdk\platform\include -I.\include -I.\..\..\sdk\platform\driver\gpio -I.\..\..\sdk\platform\driver\spi_flash -I.\..\..\sdk\app_modules\api -I.\..\..\sdk\ble_stack\rwble_hl -I.\..\..\sdk\ble_stack\rwble -I.\..\..\sdk\platform\core_modules\rwip\api --c99 --thumb -c-I F:\SVN\DA14583\DA1458x_SDK_5.0.4\DA1458x_SDK\5.0.4\utilities\flash_programmer\RTE-I C:\Keil_v5\ARM\PACK\ARM\CMSIS\4.3.0\Device\ARM\ARMCM0\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="516" -DARMCM0-o .\out_jtag\programmer.o --omf_browse .\out_jtag\programmer.crf --depend .\out_jtag\programmer.d)
-I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\global_io.h)(0x57988474)
-I (.\..\..\sdk\platform\include\datasheet.h)(0x57988474)
-I (.\include\programmer.h)(0x57988476)
-I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x55AEF5F2)
-I (.\include\peripherals.h)(0x57988476)
-I (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)
-I (.\..\..\sdk\platform\arch\arch.h)(0x57988472)
-I (.\..\..\sdk\platform\arch\compiler\rvds\compiler.h)(0x57988472)
-I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\arch\ll\rvds\ll.h)(0x57988472)
-I (.\..\..\sdk\platform\include\reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\_reg_intc.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\reg\reg_access.h)(0x57988474)
-I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x55AEF5F2)
-I (.\..\..\sdk\platform\include\ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cm0.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmInstr.h)(0x57988474)
-I (.\..\..\sdk\platform\include\core_cmFunc.h)(0x57988474)
-I (.\..\..\sdk\platform\include\system_ARMCM0.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)
-I (.\..\..\sdk\platform\driver\spi_flash\spi_flash.h)(0x5D77BED4)
-I (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.h)(0x57988474)
-I (.\include\user_periph_setup.h)(0x57988476)
-I (.\include\uart.h)(0x57988476)
-I (.\include\otpc.h)(0x57988476)
-I (.\include\version.h)(0x57988476)
-I (.\..\..\sdk\platform\include\ble_580_sw_version.h)(0x579884CA)
-F (.\include\peripherals.h)(0x57988476)()
-F (.\include\user_periph_setup.h)(0x57988476)()
-F (.\include\otpc.h)(0x57988476)()
-F (.\include\uart.h)(0x57988476)()
-F (.\include\programmer.h)(0x57988476)()
-F (.\..\..\sdk\platform\driver\gpio\gpio.h)(0x57988474)()
-F (.\..\..\sdk\platform\driver\i2c_eeprom\i2c_eeprom.h)(0x57988474)()
-F (.\..\..\sdk\platform\driver\spi\spi.h)(0x57988474)()
-F (.\..\..\sdk\platform\driver\spi_flash\spi_flash.h)(0x5D77BED4)()
-F (.\include\version.h)(0x57988476)()
