@@ -25,6 +25,7 @@
 #include "uart.h"                    // UART initialization
 #include "uart_sps.h"
 #include "user_sps_scheduler.h"
+#include "arch_console.h"
 
 /**
  ****************************************************************************************
@@ -124,4 +125,6 @@ void periph_init(void)
     
     // Enable the pads
     SetBits16(SYS_CTRL_REG, PAD_LATCH_EN, 1);
+
+	
 }

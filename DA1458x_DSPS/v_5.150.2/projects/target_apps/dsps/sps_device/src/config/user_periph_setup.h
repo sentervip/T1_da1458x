@@ -33,8 +33,8 @@
  ****************************************************************************************
  */
 
-#define CFG_UART_HW_FLOW_CTRL
-#undef CFG_UART_SW_FLOW_CTRL
+//#define CFG_UART_HW_FLOW_CTRL
+#undef  CFG_UART_SW_FLOW_CTRL
 
 /// Available baud rates 115200, 57600, 38400, 19200, 9600
 #define CFG_UART_SPS_BAUDRATE       UART_BAUDRATE_115K2
@@ -49,7 +49,7 @@
     #define GPIO_UART1_TX_PORT   GPIO_PORT_0
     #define GPIO_UART1_TX_PIN    GPIO_PIN_4
     #define GPIO_UART1_RX_PORT   GPIO_PORT_0
-    #define GPIO_UART1_RX_PIN    GPIO_PIN_5
+    #define GPIO_UART1_RX_PIN    GPIO_PIN_1   //GPIO_PIN_5
     #define GPIO_UART1_RTS_PORT  GPIO_PORT_0
     #define GPIO_UART1_RTS_PIN   GPIO_PIN_3
     #define GPIO_UART1_CTS_PORT  GPIO_PORT_0

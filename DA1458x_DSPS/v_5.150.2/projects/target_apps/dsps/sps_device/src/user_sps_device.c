@@ -125,6 +125,7 @@ void user_on_connection(uint8_t connection_idx, struct gapc_connection_req_ind c
     user_gattc_exc_mtu_cmd(connection_idx);
     app_easy_gap_param_update_start(connection_idx);
     arch_printf("Device connected\r\n");
+	uart2_write("hello", 5, NULL); 
 }
 
 /**

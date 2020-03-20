@@ -341,6 +341,8 @@ int arch_printf(const char *fmt, ...)
     printf_msg* msg;
     uint32_t len;
     
+	return 0;  // 运行下面会导致打印乱码 by aizj
+	
     // Check if heap is ready
     if (func_check_mem_flag) {
         // Heap is not ready => there's no memory to store the msg
@@ -352,7 +354,7 @@ int arch_printf(const char *fmt, ...)
     arch_snprintf(my_buf, sizeof(my_buf), fmt, args);
     va_end(args);
 
-    len = arch_strlen(my_buf);
+    len = arch_strlen(my_buf);	
     msg = create_msg(len + 1);
     if (msg) {
         strcpy(msg->pBuf, my_buf);
@@ -387,9 +389,10 @@ void arch_puts(const char *s)
 
 void arch_printf_process(void)
 {
+
     if (defer_sending) {
         arch_force_active_mode();
-#ifdef CFG_PRINTF_UART2         
+#ifdef CFG_PRINTF_UART2        
         uart2_write((uint8_t *)printf_msg_list->pBuf, arch_strlen(printf_msg_list->pBuf), uart_callback);
 #else
         uart_write((uint8_t *)printf_msg_list->pBuf, arch_strlen(printf_msg_list->pBuf), uart_callback);        
